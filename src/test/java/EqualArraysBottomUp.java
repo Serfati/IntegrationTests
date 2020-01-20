@@ -11,7 +11,7 @@ public class EqualArraysBottomUp {
     int[] arr4;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         arr1 = new int[]{3, 2, 1};
         arr2 = new int[]{3, 2, 1};
         arr3 = new int[]{2, 3, 1};

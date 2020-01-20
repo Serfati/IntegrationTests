@@ -13,6 +13,10 @@ public class SizeBottomUp {
     public void size() {
         int[] arr = {1, 5, 7, 6, 1};
         assertEquals(Program.size(arr), arr.length);
+    }
+
+    @Test
+    public void sizeEmpty() {
         assertEquals(Program.size(new int[]{}), 0);
     }
 }

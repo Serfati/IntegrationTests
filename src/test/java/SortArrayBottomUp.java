@@ -18,9 +18,23 @@ public class SortArrayBottomUp {
     @Test
     public void sortArray() {
         assertTrue(Program.equalArrays(Program.sortArray(arr), sorted));
+
+    }
+
+    @Test
+    public void sortSorted() {
+
         assertTrue(Program.equalArrays(Program.sortArray(ready), ready));
 
+    }
+
+    @Test
+    public void sortNull() {
         assertTrue(Program.equalArrays(Program.sortArray(null), null));
+    }
+
+    @Test
+    public void sortEmpty() {
         assertTrue(Program.equalArrays(Program.sortArray(new int[]{}), new int[]{}));
     }
 }

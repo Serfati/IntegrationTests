@@ -30,7 +30,6 @@ public class PrintArrBottomUp {
     public void printArr() {
         int[] arr = {1, 2, 3};
         Program.printArr(arr);
-        // TODO: Understand what print they expect
         assertEquals("1 2 3 \n", outContent.toString());
     }
 

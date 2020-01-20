@@ -11,21 +11,22 @@ public class SumMinMaxBottomUp {
         int ans = Program.sumMinMax(arr);
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void sumMinMaxEmpty() {
-        int[] arr = {};
-        int ans = Program.sumMinMax(arr);
+        try {
+            assertEquals(Program.sumMinMax(new int[0]), 0);
+        } catch(Exception e) {
+            fail("error");
+        }
     }
 
     @Test
     public void sumMinMax() {
         try {
             int[] arr = {2, 3, 7, 2, 4};
-            int ans = Program.sumMinMax(arr);
-            int sumMinMax = 9;
-            assertEquals(ans, sumMinMax);
+            assertEquals(Program.sumMinMax(arr), 9);
         } catch(Exception e) {
-            //fail("should not throw error");
+            fail("error");
         }
     }
 
@@ -33,11 +34,9 @@ public class SumMinMaxBottomUp {
     public void sumMinMax2() {
         try {
             int[] arr = {3, 5, -5, 1, 6, 10};
-            int ans = Program.sumMinMax(arr);
-            int sumMinMax = 5;
-            assertEquals(ans, sumMinMax);
+            assertEquals(Program.sumMinMax(arr), 5);
         } catch(Exception e) {
-            //fail("should not throw error");
+            fail("error");
         }
     }
 
@@ -45,11 +44,9 @@ public class SumMinMaxBottomUp {
     public void sumMinMax4() {
         try {
             int[] arr = {1, 1, 1, 1};
-            int ans = Program.sumMinMax(arr);
-            int sumMinMax = 2;
-            assertEquals(ans, sumMinMax);
+            assertEquals(Program.sumMinMax(arr), 2);
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
@@ -57,11 +54,9 @@ public class SumMinMaxBottomUp {
     public void sumMinMax3() {
         try {
             int[] arr = {2};
-            int ans = Program.sumMinMax(arr);
-            int sumMinMax = 4;
-            assertEquals(ans, sumMinMax);
+            assertEquals(Program.sumMinMax(arr), 4);
         } catch(Exception e) {
-            //fail("should not throw error");
+            fail("error");
         }
     }
 }

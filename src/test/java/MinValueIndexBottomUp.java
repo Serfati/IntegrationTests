@@ -8,21 +8,18 @@ public class MinValueIndexBottomUp {
     @Test
     public void minValueIndexNULL() {
         try {
-            int minValueIndex = Program.minValueIndex(null);
-            assertEquals(-1, minValueIndex);
+            assertEquals(-1, Program.minValueIndex(null));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
     @Test
     public void minValueIndexEmpty() {
         try {
-            int[] arr = new int[0];
-            int minValueIndex = Program.minValueIndex(arr);
-            assertEquals(-1, minValueIndex);
+            assertEquals(-1, Program.minValueIndex(new int[0]));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
@@ -30,10 +27,9 @@ public class MinValueIndexBottomUp {
     public void minValueIndex() {
         try {
             int[] arr = {3, 4, 5, 1, 7, 3};
-            int minValueIndex = Program.minValueIndex(arr);
-            assertEquals(3, minValueIndex);
+            assertEquals(3, Program.minValueIndex(arr));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 }

@@ -13,14 +13,26 @@ public class CopyArrBottomUp {
     }
 
     @Test
-    public void copyArr() {
+    public void copyArrPointer() {
 
         int[] copy = Program.copyArr(arr);
+        assertNotEquals(arr, copy);
+    }
 
-        assertNotEquals(arr, copy);   // not the same pointer
-        assertArrayEquals(arr, copy); // same values
+    @Test
+    public void copyArrSame() {
 
-        assertArrayEquals(null, Program.copyArr(null));       // null test
-        assertArrayEquals(new int[]{}, Program.copyArr(new int[]{})); // empty test
+        int[] copy = Program.copyArr(arr);
+        assertArrayEquals(arr, copy);
+    }
+
+    @Test
+    public void copyArrNull() {
+        assertArrayEquals(null, Program.copyArr(null));
+    }
+
+    @Test
+    public void copyArrEmpty() {
+        assertArrayEquals(new int[]{}, Program.copyArr(new int[]{}));
     }
 }

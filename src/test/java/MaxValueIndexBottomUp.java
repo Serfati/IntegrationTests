@@ -8,21 +8,18 @@ public class MaxValueIndexBottomUp {
     @Test
     public void maxValueIndexNULL() {
         try {
-            int maxValueIndex = Program.maxValueIndex(null);
-            assertEquals(-1, maxValueIndex);
+            assertEquals(-1, Program.maxValueIndex(null));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
     @Test
     public void maxValueIndexEmpty() {
         try {
-            int[] arr = new int[0];
-            int maxValueIndex = Program.maxValueIndex(arr);
-            assertEquals(-1, maxValueIndex);
+            assertEquals(-1, Program.maxValueIndex(new int[0]));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
@@ -30,10 +27,9 @@ public class MaxValueIndexBottomUp {
     public void maxValueIndex() {
         try {
             int[] arr = {3, 4, 5, 2, 7, 9};
-            int maxValueIndex = Program.maxValueIndex(arr);
-            assertEquals(5, maxValueIndex);
+            assertEquals(5, Program.maxValueIndex(arr));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 }

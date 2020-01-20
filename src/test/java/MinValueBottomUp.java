@@ -7,37 +7,31 @@ public class MinValueBottomUp {
 
     @Test(expected = NullPointerException.class)
     public void minValueNULL() {
-        int[] arr = null;
-        int ans = Program.minValue(arr);
+        int ans = Program.minValue(null);
     }
 
     @Test
     public void minValue() {
         try {
             int[] arr = {7, 3, 6, 2, 6};
-            int minValue = 2;
-            int ans = Program.minValue(arr);
-            assertEquals(minValue, ans);
+            assertEquals(2, Program.minValue(arr));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void minValueEmpty() {
-        int[] arr = new int[0];
-        int ans = Program.minValue(arr);
+        int ans = Program.minValue(new int[0]);
     }
 
     @Test
     public void minValueMinus() {
         try {
             int[] arr = {7, -3, 6, 2, 6};
-            int minValue = -3;
-            int ans = Program.minValue(arr);
-            assertEquals(minValue, ans);
+            assertEquals(-3, Program.minValue(arr));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 }

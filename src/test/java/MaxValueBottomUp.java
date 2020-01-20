@@ -5,39 +5,37 @@ import static org.junit.Assert.fail;
 
 public class MaxValueBottomUp {
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void maxValueNULL() {
-        int[] arr = null;
-        int ans = Program.maxValue(arr);
+        try {
+            assertEquals(Program.maxValue(null), -1);
+        } catch(Exception e) {
+            fail("error");
+        }
     }
 
     @Test
     public void maxValue() {
         try {
             int[] arr = {5, 2, 3, 10, 1};
-            int maxValue = 10;
-            int ans = Program.maxValue(arr);
-            assertEquals(maxValue, ans);
+            assertEquals(10, Program.maxValue(arr));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void maxValueEmpty() {
-        int[] arr = new int[0];
-        int ans = Program.maxValue(arr);
+        assertEquals(-1, Program.maxValue(new int[0]));
     }
 
     @Test
     public void maxValueMinus() {
         try {
             int[] arr = {-5, -7, -3, -6, -2};
-            int maxValue = -2;
-            int ans = Program.maxValue(arr);
-            assertEquals(maxValue, ans);
+            assertEquals(-2, Program.maxValue(arr));
         } catch(Exception e) {
-            fail("should not throw error");
+            fail("error");
         }
     }
 }
