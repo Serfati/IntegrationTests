@@ -1,8 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class EqualArraysBottomUp {
     int[] arr1;
@@ -18,22 +17,102 @@ public class EqualArraysBottomUp {
         arr4 = new int[]{};
     }
 
+    @Test(timeout = 100)
+    public void equalArrayEqual() {
+        try {
+            assertTrue(Program.equalArrays(arr1, arr2));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
 
     @Test(timeout = 100)
-    public void equalArrays() {
-        assertTrue(Program.equalArrays(arr1, arr2));//equal
-        assertFalse(Program.equalArrays(arr1, arr3));//diff order
-        assertFalse(Program.equalArrays(arr1, arr4));// dif size
+    public void equalArrayDiffSize() {
+        try {
+            assertFalse(Program.equalArrays(arr1, arr3));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
 
-        assertFalse(Program.equalArrays(arr1, null)); // second null
-        assertFalse(Program.equalArrays(null, arr1)); // first null
-        assertTrue(Program.equalArrays(null, null));  // both null
+    @Test(timeout = 100)
+    public void equalArrayDifSize() {
+        try {
+            assertFalse(Program.equalArrays(arr1, arr4));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
 
-        assertFalse(Program.equalArrays(arr1, new int[]{}));        // second empty
-        assertFalse(Program.equalArrays(new int[]{}, arr1));        // first empty
-        assertTrue(Program.equalArrays(new int[]{}, new int[]{})); // both empty
+    @Test(timeout = 100)
+    public void equalArraySecNull() {
+        try {
+            assertFalse(Program.equalArrays(arr1, null));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
 
-        assertFalse(Program.equalArrays(null, new int[]{}));        // null-empty
-        assertFalse(Program.equalArrays(new int[]{}, null));        // empty-null
+    @Test(timeout = 100)
+    public void equalArrayFirstNull() {
+        try {
+            assertFalse(Program.equalArrays(null, arr1));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
+
+    @Test(timeout = 100)
+    public void equalArrayNullNull() {
+        try {
+            assertTrue(Program.equalArrays(null, null));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
+
+    @Test(timeout = 100)
+    public void equalArraySecEmpty() {
+        try {
+            assertFalse(Program.equalArrays(arr1, new int[]{}));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
+
+    @Test(timeout = 100)
+    public void equalArrayFirstEmpty() {
+        try {
+            assertFalse(Program.equalArrays(new int[]{}, arr1));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
+
+    @Test(timeout = 100)
+    public void equalArrayBothEmpty() {
+        try {
+            assertTrue(Program.equalArrays(new int[]{}, new int[]{}));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
+
+    @Test(timeout = 100)
+    public void equalArrayNullEmpty() {
+        try {
+            assertFalse(Program.equalArrays(null, new int[]{}));
+        } catch(Exception e) {
+            fail("error");
+        }
+    }
+
+    @Test(timeout = 100)
+    public void equalArrayEmptyNull() {
+        try {
+            assertFalse(Program.equalArrays(new int[]{}, null));
+        } catch(Exception e) {
+            fail("error");
+        }
     }
 }
